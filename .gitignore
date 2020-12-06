@@ -59,6 +59,7 @@ artifacts/
 # StyleCop
 StyleCopReport.xml
 
+
 # Files built by Visual Studio
 *_i.c
 *_p.c
@@ -85,6 +86,7 @@ StyleCopReport.xml
 .builds
 *.pidb
 *.svclog
+
 *.scc
 
 # Chutzpah Test files
