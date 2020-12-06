@@ -1,0 +1,443 @@
+﻿@model IEnumerable<ExploreSkopjeMVC.Models.Trending>
+
+@{
+    ViewBag.Title = "Trending";
+}
+
+<!DOCTYPE html>
+
+
+<html lang="en" dir="ltr">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/Content/Sliki/SkopjeHeader.jpg" type="image/jpg" />
+
+    <title>Trending</title>
+
+    <link rel="dns-prefetch" href="cookie.wieni.be">
+    <link rel="dns-prefetch" href="use.typekit.net">
+    <link rel="dns-prefetch" href="p.typekit.net">
+
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Trending" />
+    <meta name="description" content="Trending " />
+    <meta property="og:description" content="Trending section" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+    <meta property="og:image:type" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" />
+    <link rel="stylesheet" media="all" href="https://use.typekit.net/dhp3xnl.css" />
+    <link rel="stylesheet" media="all" href="~/Content/global.css" />
+
+
+
+    <style>
+        :root {
+            --theme-color: crimson;
+        }
+    </style>
+</head>
+
+
+
+
+
+<body>
+
+   
+
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+        <div class="site-container">
+
+            
+           
+
+            <main class="content " role="main">
+                <div data-drupal-messages-fallback class="hidden"></div>
+                <div class="hero">
+                    <div class="hero__visual" data-lazy-background-image="" data-hero-visual></div>
+
+                    <div class="hero__overlay"></div>
+
+                    <div class="page-title is-white is-spaced">
+                        <h1 class="page-title__h1">
+                            <span class="page-title__inner">
+                               
+
+                                <span class="page-title__main">Trending</span>
+
+
+                            </span>
+                        </h1>
+
+                    </div>
+                </div>
+
+                <div class="container is-white pull-up">
+                    <div class="container">
+
+                        <!--navigacisko menu ovde, css me zafrkavase zato go iskomentirav-->
+
+
+                        <!--<nav class="categories-menu" role="navigation" aria-label="categories">
+                            <div class="categories-menu__list" data-categories-menu>
+                                <div class="categories-menu__item is-active">
+                                    <a href="" class="categories-menu__link is-active">All</a>
+                                </div>
+
+
+                                <div class="categories-menu__item">
+                                    <a href="" class="categories-menu__link">Restaurants</a>
+                                </div>
+
+                                <div class="categories-menu__item">
+                                    <a href="" class="categories-menu__link">Coffee Bars</a>
+                                </div>
+
+                                <div class="categories-menu__item">
+                                    <a href="" class="categories-menu__link">Theatres</a>
+                                </div>
+
+
+
+
+                            </div>
+                        </nav>
+                        -->
+
+                        <div class="container is-horizontal is-vertical">
+
+
+
+
+
+                            <div class="block">
+                                <a href="~/Restaurants/zaPrototip">
+                                    <h2 class="stripe-title" style="border-left-color: #F23944">
+                                        Restaurants
+
+                                        <span class="stripe-title__icon">
+                                            <svg class="stripe-title__svg" viewBox="0 0 7 10" role="presentation"><use xlink:href="#icon-greater-than"></use></svg>
+                                        </span>
+
+                                    </h2>
+                                </a>
+
+                                <ul class="grid">
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Restoran 1
+
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium is-private">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+
+                                                    Restoran 2
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium is-private">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Restoran 3
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+
+
+                                </ul>
+                            </div>
+                            <div class="block">
+                                <a href="~/Restaurants/zaPrototip">
+                                    <h2 class="stripe-title" style="border-left-color: #E63B8C">
+                                        Coffee Bars
+
+                                        <span class="stripe-title__icon">
+                                            <svg class="stripe-title__svg" viewBox="0 0 7 10" role="presentation"><use xlink:href="#icon-greater-than"></use></svg>
+                                        </span>
+
+                                    </h2>
+                                </a>
+
+                                <ul class="grid">
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Kafe bar 1
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Kafe bar 2
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Kafe bar 3
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                            <div class="block">
+                                <a href="~/Restaurants/zaPrototip">
+                                    <h2 class="stripe-title" style="border-left-color: #6BB3D9">
+                                        Theatres
+
+                                        <span class="stripe-title__icon">
+                                            <svg class="stripe-title__svg" viewBox="0 0 7 10" role="presentation"><use xlink:href="#icon-greater-than"></use></svg>
+                                        </span>
+
+                                    </h2>
+                                </a>
+
+                                <ul class="grid">
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Teatar 1
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Teatar 2
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-4">
+
+
+
+                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">najdobar</span>
+                                                    Teatar 3
+                                                </h3>
+
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+            </main>
+
+            
+
+            <footer>
+                <div class="footer" style="background-color:crimson;">
+                    <nav class="container is-horizontal" aria-label="Footer navigation">
+                        <ul class="footer__list grid">
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">About</p>
+                                <ul class="footer__sub-list">
+                                    <!-- About us--->
+                                    <li class="footer__sub-item"><a class="footer__link" href="">About us</a></li>
+
+                                </ul>
+                            </li>
+
+                            <!-- Follow us--->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Follow us</p>
+                                <ul class="footer__sub-list">
+                                    <li class="footer__sub-item"><a class="footer__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                                    <li class="footer__sub-item"><a class="footer__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                                </ul>
+                            </li>
+
+                            <!--Cities (samo skopje sea za sea)--->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Cities</p>
+                                <ul class="footer__sub-list">
+                                    <li class="footer__sub-item"><a class="footer__link" href="/Home/Index">Skopje</a></li>
+
+                                </ul>
+                            </li>
+
+
+                            <!--Menito ovde-->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Menu</p>
+                                <ul class="footer__sub-list">
+                                    <li class="footer__sub-item"><a class="footer__link" href="~/Home/Index">Home</a></li>
+                                    <li class="footer__sub-item"><a class="footer__link" href="~/Categories/Index">Categories</a></li>
+                                    <li class="footer__sub-item"><a class="footer__link" href="~/Trendings/Index">Trending</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Ovde mapa da se stajt najubo Contact--->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Contact Us</p>
+                                <ul class="footer__sub-list">
+                                    <li style="width:500px;" class="footer__sub-item">Phone number: +389 70 000 000</li>
+                                    <li style="width:500px;" class="footer__sub-item">Adress: Partizanski Odredi 77</li>
+                                    <li style="width:500px;" class="footer__sub-item">Ovde  MAPA OSM</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </footer>
+        </div>
+
+      
+
+
+    </div>
+
+
+   
+
+</body>
+</html>
