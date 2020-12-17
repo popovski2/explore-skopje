@@ -1,45 +1,59 @@
 ﻿@model IEnumerable<ExploreSkopjeMVC.Models.Restaurant>
 
-@{
-    ViewBag.Title = "Index";
-}
+@{ ViewBag.Title = "Index"; }
 
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.longitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.latitude)
-        </th>
-        <th></th>
-    </tr>
+<h2>Restaurants</h2>
 
-    @foreach (var item in Model)
-    {
+@* We do not need this
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+*@
+
+<table class="table" id="RestaurantsTable">
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.longitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.latitude)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.latitude)
+            </th>
+            <th></th>
         </tr>
-    }
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.longitude)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.latitude)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+    </td>
+</tr>}
+    </tbody>
 
 </table>
+
+
+@section scripts {
+
+    <script>$("#RestaurantsTable").DataTable();</script>
+
+}

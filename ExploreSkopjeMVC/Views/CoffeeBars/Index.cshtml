@@ -1,50 +1,67 @@
 ﻿@model IEnumerable<ExploreSkopjeMVC.Models.CoffeeBar>
 
-@{
-    ViewBag.Title = "Index";
-}
+@{ ViewBag.Title = "Index"; }
 
-<h2>Index</h2>
+<h2>Coffee Bars</h2>
 
 
-<!--comment-->
+@* We do not need this
+    <p>
+          @Html.ActionLink("Create New", "Create")
+    </p>
+*@
 
-<!-- vtor komentar-->
+@*Creating a table (paging, sorting, searching)
+    Installing:
+          1. Install-Package jQuery.DataTables
+          2. Install-Package bootbox
+*@
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.longitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.latitude)
-        </th>
-        <th></th>
-    </tr>
+<table class="table" id="CaffeesTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.latitude)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.longitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.latitude)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.longitude)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.latitude)
+    </td>
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.id })
+
+        @if (User.IsInRole("Administrator"))
+        {
+@Html.ActionLink("Edit  ", "Edit", new { id = item.id })
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })}
+    </td>
+</tr>}
+    </tbody>
 
 </table>
+
+@section scripts {
+
+    <script>$("#CaffeesTable").DataTable();</script>
+
+}
