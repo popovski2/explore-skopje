@@ -15,6 +15,10 @@ namespace ExploreSkopjeMVC.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        //Enable user to like (flag) or unlike (flag1) only once
+        public static bool flag = false;
+        public static bool flag1 = false;
+
         // GET: CoffeeBars
         public ActionResult Index()
         {
@@ -51,12 +55,45 @@ namespace ExploreSkopjeMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                coffeeBar.likes_counter = 0;
                 db.CoffeeBars.Add(coffeeBar);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(coffeeBar);
+        }
+
+        public ActionResult Like(int id)
+        {
+            CoffeeBar update = db.CoffeeBars.ToList().Find(u => u.id == id);
+
+            if (!flag)
+            {
+                //ViewBag.flag = true;
+                update.likes_counter += 1;
+                flag = true;
+                flag1 = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
+        }
+
+        public ActionResult Unlike(int id)
+        {
+            CoffeeBar update = db.CoffeeBars.ToList().Find(u => u.id == id);
+
+            if (!flag1)
+            {
+                //ViewBag.flag = false;
+                update.likes_counter -= 1;
+                flag1 = true;
+                flag = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
         }
 
         // GET: CoffeeBars/Edit/5

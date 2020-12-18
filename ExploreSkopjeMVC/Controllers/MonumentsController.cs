@@ -17,6 +17,10 @@ namespace ExploreSkopjeMVC.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        //Enable user to like (flag) or unlike (flag1) only once
+        public static bool flag = false;
+        public static bool flag1 = false;
+
         // GET: Monuments
         public ActionResult Index()
         {
@@ -53,6 +57,7 @@ namespace ExploreSkopjeMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                monument.likes_counter = 0;
                 db.Monuments.Add(monument);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -60,6 +65,39 @@ namespace ExploreSkopjeMVC.Controllers
 
             return View(monument);
         }
+
+        public ActionResult Like(int id)
+        {
+            Monument update = db.Monuments.ToList().Find(u => u.id == id);
+
+            if (!flag)
+            {
+                //ViewBag.flag = true;
+                update.likes_counter += 1;
+                flag = true;
+                flag1 = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
+        }
+
+        public ActionResult Unlike(int id)
+        {
+            Monument update = db.Monuments.ToList().Find(u => u.id == id);
+
+            if (!flag1)
+            {
+                //ViewBag.flag = false;
+                update.likes_counter -= 1;
+                flag1 = true;
+                flag = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
+        }
+
 
         // GET: Monuments/Edit/5
         public ActionResult Edit(long? id)

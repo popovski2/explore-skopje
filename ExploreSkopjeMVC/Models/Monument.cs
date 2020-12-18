@@ -19,7 +19,7 @@ namespace ExploreSkopjeMVC.Models
         //id-vo e long zs vo .csv fajlot e long (od tamu go zemame direktno)
 
          
-            [Key]
+        [Key]
         public long id { get; set; }
 
         public string name { get; set; }
@@ -27,6 +27,9 @@ namespace ExploreSkopjeMVC.Models
         public double longitude { get; set; }
 
         public double latitude { get; set; }
+
+        public int likes_counter { get; set; }
+
 
     }
 }

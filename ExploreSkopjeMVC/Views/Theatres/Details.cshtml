@@ -34,9 +34,30 @@
             @Html.DisplayFor(model => model.latitude)
         </dd>
 
+        <h4> @Html.DisplayFor(model => model.likes_counter) likes </h4>
+
     </dl>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @if (User.IsInRole("Administrator") || User.IsInRole("User"))
+    {
+        <a href="@Url.Action("Like", "Theatres", new { id = Model.id })">
+            <img src="https://img.icons8.com/material-rounded/24/000000/facebook-like--v1.png" />
+        </a>
+
+        <a href="@Url.Action("Unlike", "Theatres", new { id = Model.id })">
+            <img src="https://img.icons8.com/material-rounded/24/000000/thumbs-down.png" />
+        </a>
+     }
+
+</p>
+
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Edit  ", "Edit", new { id = Model.id })
+    }
+
+        @Html.ActionLink("Back to List", "Index")
 </p>

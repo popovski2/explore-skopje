@@ -14,9 +14,9 @@ namespace ExploreSkopjeMVC.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-
-        
-
+        //Enable user to like (flag) or unlike (flag1) only once
+        public static bool flag = false;
+        public static bool flag1 = false;
 
         // GET: Restaurants
         public ActionResult Index()
@@ -54,6 +54,7 @@ namespace ExploreSkopjeMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                restaurant.likes_counter = 0;
                 db.Restaurants.Add(restaurant);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,6 +62,39 @@ namespace ExploreSkopjeMVC.Controllers
 
             return View(restaurant);
         }
+
+        public ActionResult Like(int id)
+        {
+            Restaurant update = db.Restaurants.ToList().Find(u => u.id == id);
+
+            if (!flag)
+            {
+                //ViewBag.flag = true;
+                update.likes_counter += 1;
+                flag = true;
+                flag1 = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
+        }
+
+        public ActionResult Unlike(int id)
+        {
+            Restaurant update = db.Restaurants.ToList().Find(u => u.id == id);
+
+            if (!flag1)
+            {
+                //ViewBag.flag = false;
+                update.likes_counter -= 1;
+                flag1 = true;
+                flag = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
+        }
+
 
         // GET: Restaurants/Edit/5
         public ActionResult Edit(long? id)

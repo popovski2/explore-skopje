@@ -51,11 +51,13 @@
 
         @if (User.IsInRole("Administrator"))
         {
-@Html.ActionLink("Edit  ", "Edit", new { id = item.id })
+                    @Html.ActionLink("Edit  ", "Edit", new { id = item.id })
 
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })}
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        }
     </td>
-</tr>}
+</tr>
+        }
     </tbody>
 
 </table>
