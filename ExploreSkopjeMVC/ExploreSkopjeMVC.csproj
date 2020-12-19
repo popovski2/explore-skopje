@@ -224,8 +224,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\global.css" />
+    <Content Include="Content\Sliki\coffeeBarCategory.jpeg" />
+    <Content Include="Content\Sliki\homePagePhoto.jpeg" />
     <Content Include="Content\Sliki\logo.png" />
+    <Content Include="Content\Sliki\monumentsCategory.jpeg" />
+    <Content Include="Content\Sliki\restaurantsCategory.jpeg" />
     <Content Include="Content\Sliki\SkopjeHeader.jpg" />
+    <Content Include="Content\Sliki\theatresCategory.jpeg" />
+    <Content Include="Content\Sliki\trendingHeader.jpeg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
