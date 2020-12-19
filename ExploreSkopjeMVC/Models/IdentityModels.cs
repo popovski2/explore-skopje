@@ -41,5 +41,7 @@ namespace ExploreSkopjeMVC.Models
         public System.Data.Entity.DbSet<ExploreSkopjeMVC.Models.Theatre> Theatres { get; set; }
 
         public System.Data.Entity.DbSet<ExploreSkopjeMVC.Models.Trending> Trendings { get; set; }
+
+        public System.Data.Entity.DbSet<ExploreSkopjeMVC.Models.RatingComments> RatingComments { get; set; }
     }
 }

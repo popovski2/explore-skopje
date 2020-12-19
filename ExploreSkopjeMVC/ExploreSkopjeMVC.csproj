@@ -187,6 +187,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MonumentsController.cs" />
+    <Compile Include="Controllers\RatingCommentsController.cs" />
     <Compile Include="Controllers\RestaurantsController.cs" />
     <Compile Include="Controllers\TheatresController.cs" />
     <Compile Include="Controllers\TrendingsController.cs" />
@@ -205,6 +206,70 @@
     <Compile Include="Migrations\202012061530530_second.designer.cs">
       <DependentUpon>202012061530530_second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012171534029_ratingComments.cs" />
+    <Compile Include="Migrations\202012171534029_ratingComments.designer.cs">
+      <DependentUpon>202012171534029_ratingComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012171550442_ratingComments2.cs" />
+    <Compile Include="Migrations\202012171550442_ratingComments2.designer.cs">
+      <DependentUpon>202012171550442_ratingComments2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012171636215_RatingComment.cs" />
+    <Compile Include="Migrations\202012171636215_RatingComment.designer.cs">
+      <DependentUpon>202012171636215_RatingComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012171818244_RatingComment1.cs" />
+    <Compile Include="Migrations\202012171818244_RatingComment1.designer.cs">
+      <DependentUpon>202012171818244_RatingComment1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172151392_Modeli.cs" />
+    <Compile Include="Migrations\202012172151392_Modeli.designer.cs">
+      <DependentUpon>202012172151392_Modeli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172156360_coffeeBarType.cs" />
+    <Compile Include="Migrations\202012172156360_coffeeBarType.designer.cs">
+      <DependentUpon>202012172156360_coffeeBarType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172203516_se.cs" />
+    <Compile Include="Migrations\202012172203516_se.designer.cs">
+      <DependentUpon>202012172203516_se.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172206441_SM.cs" />
+    <Compile Include="Migrations\202012172206441_SM.designer.cs">
+      <DependentUpon>202012172206441_SM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172211426_s.cs" />
+    <Compile Include="Migrations\202012172211426_s.designer.cs">
+      <DependentUpon>202012172211426_s.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172214073_new1.cs" />
+    <Compile Include="Migrations\202012172214073_new1.designer.cs">
+      <DependentUpon>202012172214073_new1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172215549_monuments.cs" />
+    <Compile Include="Migrations\202012172215549_monuments.designer.cs">
+      <DependentUpon>202012172215549_monuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172230579_bezTYPE.cs" />
+    <Compile Include="Migrations\202012172230579_bezTYPE.designer.cs">
+      <DependentUpon>202012172230579_bezTYPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012172239113_toeto.cs" />
+    <Compile Include="Migrations\202012172239113_toeto.designer.cs">
+      <DependentUpon>202012172239113_toeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012181353100_RatingCB.cs" />
+    <Compile Include="Migrations\202012181353100_RatingCB.designer.cs">
+      <DependentUpon>202012181353100_RatingCB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012181355338_RatingR.cs" />
+    <Compile Include="Migrations\202012181355338_RatingR.designer.cs">
+      <DependentUpon>202012181355338_RatingR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012181401216_RatingT.cs" />
+    <Compile Include="Migrations\202012181401216_RatingT.designer.cs">
+      <DependentUpon>202012181401216_RatingT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -212,6 +277,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Monument.cs" />
+    <Compile Include="Models\RatingComments.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\Theatre.cs" />
     <Compile Include="Models\Trending.cs" />
@@ -226,10 +292,14 @@
     <Content Include="Content\global.css" />
     <Content Include="Content\Sliki\logo.png" />
     <Content Include="Content\Sliki\SkopjeHeader.jpg" />
+    <Content Include="Content\Sliki\StarFade.gif" />
+    <Content Include="Content\Sliki\StarGlow.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\StarFade.gif" />
+    <Content Include="Images\StarGlow.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Tabeli\kafulinja1.csv" />
@@ -317,6 +387,12 @@
     <Content Include="Views\Theatres\zaBaza.cshtml" />
     <Content Include="Views\Monuments\zaBaza.cshtml" />
     <Content Include="Views\Restaurants\zaBaza.cshtml" />
+    <Content Include="Views\RatingComments\Create.cshtml" />
+    <Content Include="Views\RatingComments\Delete.cshtml" />
+    <Content Include="Views\RatingComments\Details.cshtml" />
+    <Content Include="Views\RatingComments\Edit.cshtml" />
+    <Content Include="Views\RatingComments\Index.cshtml" />
+    <Content Include="Views\Shared\_CommentBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -343,6 +419,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012061530530_second.resx">
       <DependentUpon>202012061530530_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012171534029_ratingComments.resx">
+      <DependentUpon>202012171534029_ratingComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012171550442_ratingComments2.resx">
+      <DependentUpon>202012171550442_ratingComments2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012171636215_RatingComment.resx">
+      <DependentUpon>202012171636215_RatingComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012171818244_RatingComment1.resx">
+      <DependentUpon>202012171818244_RatingComment1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172151392_Modeli.resx">
+      <DependentUpon>202012172151392_Modeli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172156360_coffeeBarType.resx">
+      <DependentUpon>202012172156360_coffeeBarType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172203516_se.resx">
+      <DependentUpon>202012172203516_se.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172206441_SM.resx">
+      <DependentUpon>202012172206441_SM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172211426_s.resx">
+      <DependentUpon>202012172211426_s.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172214073_new1.resx">
+      <DependentUpon>202012172214073_new1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172215549_monuments.resx">
+      <DependentUpon>202012172215549_monuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172230579_bezTYPE.resx">
+      <DependentUpon>202012172230579_bezTYPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012172239113_toeto.resx">
+      <DependentUpon>202012172239113_toeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012181353100_RatingCB.resx">
+      <DependentUpon>202012181353100_RatingCB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012181355338_RatingR.resx">
+      <DependentUpon>202012181355338_RatingR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012181401216_RatingT.resx">
+      <DependentUpon>202012181401216_RatingT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -32,6 +32,41 @@ namespace ExploreSkopjeMVC.Controllers
             {
                 return HttpNotFound();
             }
+            //dodadeno za RatingComments->
+            ViewBag.ObjectId = (int)id.Value;
+            ViewBag.TYPE = "Theatres";
+
+
+            var comments = db.RatingComments.Where(d => d.ObjectId.Equals((int)id.Value)).ToList();
+            ViewBag.Comments = comments;
+
+            var ratings = db.RatingComments.Where(d => d.ObjectId.Equals((int)id.Value)).ToList();
+            if (ratings.Count() > 0)
+            {
+                var ratingSum = ratings.Sum(d => d.Rating.Value);
+                ViewBag.RatingSum = ratingSum;
+                var ratingCount = ratings.Count();
+                ViewBag.RatingCount = ratingCount;
+                if (ModelState.IsValid && theatre != null)
+                {
+
+                    theatre.TotalRating = ViewBag.RatingSum / ViewBag.RatingCount;
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                ViewBag.RatingSum = 0;
+                ViewBag.RatingCount = 0;
+                if (ModelState.IsValid && theatre != null)
+                {
+
+                    theatre.TotalRating = decimal.Zero;
+                    db.SaveChanges();
+                }
+
+            }
+            //<-do tuka
             return View(theatre);
         }
 
