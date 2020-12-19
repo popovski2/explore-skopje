@@ -18,7 +18,7 @@ namespace ExploreSkopjeMVC.Models
 
 
 
-            [Key]
+        [Key]
         public long id { get; set; }
 
         public string name { get; set; }
@@ -28,9 +28,9 @@ namespace ExploreSkopjeMVC.Models
         public double latitude { get; set; }
 
 
+        public String Type { get; set; }
 
-
-
+        public decimal TotalRating { get; set; }
 
     }
 }

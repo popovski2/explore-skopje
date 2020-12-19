@@ -28,5 +28,6 @@ namespace ExploreSkopjeMVC.Models
 
         public double latitude { get; set; }
 
+
     }
 }

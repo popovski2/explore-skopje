@@ -23,5 +23,7 @@ namespace ExploreSkopjeMVC.Models
         public double longitude { get; set; }
 
         public double latitude { get; set; }
+
+        public decimal TotalRating { get; set; }
     }
 }
