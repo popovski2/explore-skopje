@@ -22,6 +22,12 @@ namespace ExploreSkopjeMVC.Models
         public List<Theatre> teatri { get; set; }
         public List<CoffeeBar> kafici { get; set; }
 
+        public List<Restaurant> trendingRestaurants { get; set; }
+
+        public List<Theatre> trendingTheaters { get; set; }
+
+        public List<CoffeeBar> trendingCoffeeBars { get; set; }
+
 
     }
 }

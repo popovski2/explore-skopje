@@ -199,11 +199,10 @@ namespace ExploreSkopjeMVC.Controllers
         public ActionResult saveToDatabase()
         {
             string filePath = "C:/Users/User/source/repos/ExploreSkopjeMVC/ExploreSkopjeMVC/Content/Tabeli/kafulinja1.csv";
-           
 
             //Read the contents of CSV file.
             string csvData = System.IO.File.ReadAllText(filePath);
-
+            
             //Execute a loop over the rows.
             foreach (string row in csvData.Split('\n'))
             {
@@ -220,6 +219,32 @@ namespace ExploreSkopjeMVC.Controllers
                     });
                     db.SaveChanges();
                 }
+            }
+            return View("zaBaza");
+        }
+
+        public ActionResult saveToDatabase1()
+        {
+            string filePath2 = "C:/Users/Angela Madjar/Desktop/CoffeeBars_additional.csv";
+
+            string csvData1 = System.IO.File.ReadAllText(filePath2);
+
+            List<CoffeeBar> bars = db.CoffeeBars.ToList();
+
+            int i = 0;
+
+            foreach (string row in csvData1.Split('\n'))
+            {
+
+                if (!string.IsNullOrEmpty(row))
+                {
+                        CoffeeBar Bar = bars.ElementAt(i);
+                        db.CoffeeBars.Find(Bar).picture_URL = Convert.ToString(row.Split(',')[0]);
+                        db.CoffeeBars.Find(Bar).facebook_link = Convert.ToString(row.Split(',')[1]);      
+                        //ovde davat greska poso ne ni e so zapirki
+                        db.SaveChanges();
+                }
+                i++;
             }
 
             return View("zaBaza");

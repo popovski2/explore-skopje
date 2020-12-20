@@ -290,12 +290,37 @@
     <Compile Include="Migrations\202012201220151_likes_counter-In-Theatre-added.designer.cs">
       <DependentUpon>202012201220151_likes_counter-In-Theatre-added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012201821409_url-fb-link-added.cs" />
+    <Compile Include="Migrations\202012201821409_url-fb-link-added.designer.cs">
+      <DependentUpon>202012201821409_url-fb-link-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201926002_url-fb-link-added-Restaurants.cs" />
+    <Compile Include="Migrations\202012201926002_url-fb-link-added-Restaurants.designer.cs">
+      <DependentUpon>202012201926002_url-fb-link-added-Restaurants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201950595_url-fb-link-added-Theatres.cs" />
+    <Compile Include="Migrations\202012201950595_url-fb-link-added-Theatres.designer.cs">
+      <DependentUpon>202012201950595_url-fb-link-added-Theatres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201954134_url-fb-link-added-Monuments.cs" />
+    <Compile Include="Migrations\202012201954134_url-fb-link-added-Monuments.designer.cs">
+      <DependentUpon>202012201954134_url-fb-link-added-Monuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012202003043_trending.cs" />
+    <Compile Include="Migrations\202012202003043_trending.designer.cs">
+      <DependentUpon>202012202003043_trending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012202021368_likesViewModel.cs" />
+    <Compile Include="Migrations\202012202021368_likesViewModel.designer.cs">
+      <DependentUpon>202012202021368_likesViewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CoffeeBar.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LikesViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Monument.cs" />
     <Compile Include="Models\RatingComments.cs" />
@@ -469,10 +494,18 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\global.css" />
     <Content Include="Content\rated.gif" />
+    <Content Include="Content\Sliki\aleksandar_makedonski.jpg" />
+    <Content Include="Content\Sliki\coffeeBarCategory.jpg" />
+    <Content Include="Content\Sliki\home.jpg" />
+    <Content Include="Content\Sliki\homePagePhoto.jpg" />
     <Content Include="Content\Sliki\logo.png" />
+    <Content Include="Content\Sliki\monumentsCategory.jpg" />
+    <Content Include="Content\Sliki\restaurantsCategory.jpg" />
     <Content Include="Content\Sliki\SkopjeHeader.jpg" />
     <Content Include="Content\Sliki\StarFade.gif" />
     <Content Include="Content\Sliki\StarGlow.gif" />
+    <Content Include="Content\Sliki\theatresCategory.jpg" />
+    <Content Include="Content\Sliki\trendingHeader.jpg" />
     <Content Include="Content\unrated.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -491,6 +524,7 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\ExploreSkopjeMVC20201220233303 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -744,6 +778,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012201220151_likes_counter-In-Theatre-added.resx">
       <DependentUpon>202012201220151_likes_counter-In-Theatre-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201821409_url-fb-link-added.resx">
+      <DependentUpon>202012201821409_url-fb-link-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201926002_url-fb-link-added-Restaurants.resx">
+      <DependentUpon>202012201926002_url-fb-link-added-Restaurants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201950595_url-fb-link-added-Theatres.resx">
+      <DependentUpon>202012201950595_url-fb-link-added-Theatres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201954134_url-fb-link-added-Monuments.resx">
+      <DependentUpon>202012201954134_url-fb-link-added-Monuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012202003043_trending.resx">
+      <DependentUpon>202012202003043_trending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012202021368_likesViewModel.resx">
+      <DependentUpon>202012202021368_likesViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

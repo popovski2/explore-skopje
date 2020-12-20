@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ExploreSkopjeMVC.Models.Trending>
+﻿@model ExploreSkopjeMVC.Models.Trending
 
 @{
     ViewBag.Title = "Trending";
@@ -19,11 +19,8 @@
 
     <title>Trending</title>
 
-    <link rel="dns-prefetch" href="cookie.wieni.be">
-    <link rel="dns-prefetch" href="use.typekit.net">
-    <link rel="dns-prefetch" href="p.typekit.net">
 
-    <meta name="twitter:card" content="summary" />
+
     <meta property="og:title" content="Trending" />
     <meta name="description" content="Trending " />
     <meta property="og:description" content="Trending section" />
@@ -52,25 +49,25 @@
 
 <body>
 
-   
+
 
     <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
         <div class="site-container">
 
-            
-           
+
+
 
             <main class="content " role="main">
                 <div data-drupal-messages-fallback class="hidden"></div>
                 <div class="hero">
-                    <div class="hero__visual" data-lazy-background-image="" data-hero-visual></div>
-
+                    <div class="hero__visual is-visible" data-hero-visual=""
+                         style="background-image: url(/Content/Sliki/trendingHeader.jpg); opacity:0.8;"></div>
                     <div class="hero__overlay"></div>
 
                     <div class="page-title is-white is-spaced">
                         <h1 class="page-title__h1">
                             <span class="page-title__inner">
-                               
+
 
                                 <span class="page-title__main">Trending</span>
 
@@ -85,8 +82,6 @@
                     <div class="container">
 
                         <!--navigacisko menu ovde, css me zafrkavase zato go iskomentirav-->
-
-
                         <!--<nav class="categories-menu" role="navigation" aria-label="categories">
                             <div class="categories-menu__list" data-categories-menu>
                                 <div class="categories-menu__item is-active">
@@ -120,7 +115,7 @@
 
 
                             <div class="block">
-                                <a href="~/Restaurants/zaPrototip">
+                                <a href="~/Restaurants/Index">
                                     <h2 class="stripe-title" style="border-left-color: #F23944">
                                         Restaurants
 
@@ -135,18 +130,38 @@
                                     <li class="col-4">
 
 
+                                        <!-- OD KO KE E GOTOVO TRENDINGOT OVDE GI MENVIME DA NOSET NA SOODVETNITE-->
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                        <a href="~/Restaurants/Details/@Model.trendingRestaurants.ElementAt(0).id" class="list-teaser is-medium ">
+                                            <div class="list-teaser__image-wrapper">
+                                                <div class="list-teaser__image" data-lazy-background-image="" style="background-image:url(@Model.trendingRestaurants.ElementAt(0).picture_URL)"></div>
+                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
+                                        
+                                            </div>
+
+                                            <div class="list-teaser__content">
+                                                <img src="@Model.trendingRestaurants.ElementAt(0).picture_URL" ; style="height:200px; height:200px;" />
+                                                <h3 class="list-teaser__title">
+                                                    <span class="prefix is-block">@Model.trendingRestaurants.ElementAt(0).name</span>
+
+                                                </h3>
+                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-4">
+
+
+                                        <a href="~/Restaurants/Details/@Model.trendingRestaurants.ElementAt(1).id" class="list-teaser is-medium is-private">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingRestaurants.ElementAt(1).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Restoran 1
-
+                                                    <span class="prefix is-block">@Model.trendingRestaurants.ElementAt(1).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -157,37 +172,16 @@
 
 
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium is-private">
+                                        <a href="~/Restaurants/Details/@Model.trendingRestaurants.ElementAt(2).id" class="list-teaser is-medium is-private">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingRestaurants.ElementAt(2).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-
-                                                    Restoran 2
-                                                </h3>
-
-                                                <div class="list-teaser__private is-desktop" data-private-icon></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="col-4">
-
-
-
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium is-private">
-                                            <div class="list-teaser__image-wrapper">
-                                                <div class="list-teaser__image" data-lazy-background-image=""></div>
-                                                <div class="list-teaser__private is-mobile" data-private-icon></div>
-                                            </div>
-
-                                            <div class="list-teaser__content">
-                                                <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Restoran 3
+                                                    <span class="prefix is-block">@Model.trendingRestaurants.ElementAt(2).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -201,7 +195,7 @@
                                 </ul>
                             </div>
                             <div class="block">
-                                <a href="~/Restaurants/zaPrototip">
+                                <a href="~/CoffeeBars/Index">
                                     <h2 class="stripe-title" style="border-left-color: #E63B8C">
                                         Coffee Bars
 
@@ -217,16 +211,16 @@
 
 
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                        <a href="~/CoffeeBars/Details/@Model.trendingCoffeeBars.ElementAt(0).id" class="list-teaser is-medium ">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingCoffeeBars.ElementAt(0).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Kafe bar 1
+                                                    <span class="prefix is-block">@Model.trendingCoffeeBars.ElementAt(0).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -237,16 +231,16 @@
 
 
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                        <a href="~/CoffeeBars/Details/@Model.trendingCoffeeBars.ElementAt(1).id" class="list-teaser is-medium ">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingCoffeeBars.ElementAt(1).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Kafe bar 2
+                                                    <span class="prefix is-block">@Model.trendingCoffeeBars.ElementAt(1).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -257,16 +251,16 @@
 
 
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                        <a href="~/CoffeeBars/Details/@Model.trendingCoffeeBars.ElementAt(2).id" class="list-teaser is-medium ">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingCoffeeBars.ElementAt(2).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Kafe bar 3
+                                                    <span class="prefix is-block">@Model.trendingCoffeeBars.ElementAt(2).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -279,7 +273,7 @@
                                 </ul>
                             </div>
                             <div class="block">
-                                <a href="~/Restaurants/zaPrototip">
+                                <a href="~/Theatres/Index">
                                     <h2 class="stripe-title" style="border-left-color: #6BB3D9">
                                         Theatres
 
@@ -295,16 +289,16 @@
 
 
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                        <a href="~/Theatres/Details/@Model.trendingTheaters.ElementAt(0).id" class="list-teaser is-medium ">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingTheaters.ElementAt(0).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Teatar 1
+                                                    <span class="prefix is-block">@Model.trendingTheaters.ElementAt(0).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -315,16 +309,16 @@
 
 
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                        <a href="~/Theatres/Details/@Model.trendingTheaters.ElementAt(1).id" class="list-teaser is-medium ">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingTheaters.ElementAt(1).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Teatar 2
+                                                    <span class="prefix is-block">@Model.trendingTheaters.ElementAt(1).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -335,16 +329,16 @@
 
 
 
-                                        <a href="~/Restaurants/zaPrototip" class="list-teaser is-medium ">
+                                        <a href="~/Theatres/Details/@Model.trendingTheaters.ElementAt(2).id" class="list-teaser is-medium ">
                                             <div class="list-teaser__image-wrapper">
                                                 <div class="list-teaser__image" data-lazy-background-image=""></div>
                                                 <div class="list-teaser__private is-mobile" data-private-icon></div>
                                             </div>
 
                                             <div class="list-teaser__content">
+                                                <img src="@Model.trendingTheaters.ElementAt(2).picture_URL" ; style="height:200px; height:200px;" />
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Teatar 3
+                                                    <span class="prefix is-block">@Model.trendingTheaters.ElementAt(2).name</span>
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -370,7 +364,7 @@
 
             </main>
 
-            
+
 
             <footer>
                 <div class="footer" style="background-color:crimson;">
@@ -420,7 +414,7 @@
                                 <ul class="footer__sub-list">
                                     <li style="width:500px;" class="footer__sub-item">Phone number: +389 70 000 000</li>
                                     <li style="width:500px;" class="footer__sub-item">Adress: Partizanski Odredi 77</li>
-                                    <li style="width:500px;" class="footer__sub-item">Ovde  MAPA OSM</li>
+
                                 </ul>
                             </li>
                         </ul>
@@ -431,13 +425,13 @@
             </footer>
         </div>
 
-      
+
 
 
     </div>
 
 
-   
+
 
 </body>
 </html>

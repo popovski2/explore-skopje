@@ -17,7 +17,19 @@ namespace ExploreSkopjeMVC.Controllers
         // GET: Trendings
         public ActionResult Index()
         {
-            return View(db.Trendings.ToList());
+
+            //vlechenje na prvite tri objekti od sekoja klasa spored rejting
+            var model = new Trending();
+
+            model.trendingCoffeeBars = db.CoffeeBars.OrderByDescending(o => o.TotalRating).Take(3).ToList();
+            model.trendingRestaurants = db.Restaurants.OrderByDescending(o => o.TotalRating).Take(3).ToList();
+            model.trendingTheaters = db.Theatres.OrderByDescending(o => o.TotalRating).Take(3).ToList();
+
+
+
+            return View(model);
+
+
         }
 
         // GET: Trendings/Details/5

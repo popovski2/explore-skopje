@@ -34,6 +34,10 @@ namespace ExploreSkopjeMVC.Models
         //Angela
         public int likes_counter { get; set; }
 
+        public string picture_URL { get; set; }
+
+        public string facebook_link { get; set; }
+
 
 
     }
