@@ -4,10 +4,12 @@
     ViewBag.Title = "Details";
 }
 
+<br />
+<br />
 <h2>Details</h2>
 
 <div>
-    <h4>Monument</h4>
+    <h3>@Model.name</h3>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -34,9 +36,57 @@
             @Html.DisplayFor(model => model.latitude)
         </dd>
 
+        <h4> @Html.DisplayFor(model => model.likes_counter) likes </h4>
+
     </dl>
 </div>
+
+@*Like and Unlike buttons*@
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @if (User.IsInRole("Administrator") || User.IsInRole("User"))
+    {
+        <a href="@Url.Action("Like", "Monuments", new { id = Model.id })">
+            <img src="https://img.icons8.com/material-rounded/24/000000/facebook-like--v1.png" />
+        </a>
+
+        <a href="@Url.Action("Unlike", "Monuments", new { id = Model.id })">
+            <img src="https://img.icons8.com/material-rounded/24/000000/thumbs-down.png" />
+        </a>}
+</p>
+
+
+@*Share button*@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <button value="Copy Url" onclick="Copy();" style="background-color:transparent; border-color:transparent;">
+            <img src="https://img.icons8.com/android/24/000000/link.png" height="20" />
+        </button>
+        <br />
+        <textarea id="urlCopied" rows="1" cols="30" style="display: none;"></textarea>
+        <br /> <br />
+    </div>
+</body>
+</html>
+
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Edit  ", "Edit", new { id = Model.id })
+    }
+
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<script type="text/javascript">
+    function Copy() {
+        //var Url = document.createElement("textarea");
+        $('#urlCopied').show();
+        urlCopied.innerHTML = window.location.href;
+        //Copied = Url.createTextRange();
+        //Copied.execCommand("Copy");
+    }
+</script>

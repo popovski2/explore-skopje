@@ -21,9 +21,13 @@ namespace ExploreSkopjeMVC.Models
 
         public double longitude { get; set; }
 
+        //Jovana
         public double latitude { get; set; }
 
         public decimal TotalRating { get; set; }
+
+        //Angela
+        public int likes_counter { get; set; }
 
     }
 }

@@ -25,5 +25,7 @@ namespace ExploreSkopjeMVC.Models
         public double latitude { get; set; }
 
         public decimal TotalRating { get; set; }
+
+        public int likes_counter { get; set; }
     }
 }

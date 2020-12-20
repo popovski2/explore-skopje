@@ -17,9 +17,6 @@ namespace ExploreSkopjeMVC.Models
         //id-vo e long zs vo .csv fajlot e long (od tamu go zemame direktno)
 
 
-
-
-
         [Key]
         public long id { get; set; }
 
@@ -29,10 +26,15 @@ namespace ExploreSkopjeMVC.Models
 
         public double latitude { get; set; }
 
-
+        //Jovana
         public String Type { get; set; }
 
         public decimal TotalRating { get; set; }
+
+        //Angela
+        public int likes_counter { get; set; }
+
+
 
     }
 }

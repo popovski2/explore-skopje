@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ExploreSkopjeMVC.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ExploreSkopjeMVC.Controllers
 {
@@ -50,6 +51,51 @@ namespace ExploreSkopjeMVC.Controllers
             {
                 _userManager = value;
             }
+        }
+
+        //Creating a function that will enable the user to choose a Role
+        //It should be used only for adding users to Administrator Role
+        //All of the other users are added to User Role by default when registrating
+        public ActionResult AddUserToRole()
+        {
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+
+            string name = "Administrator";
+            //Create Role Administrator if it does not exist
+            if (!RoleManager.RoleExists(name))
+            {
+                var roleresult = RoleManager.Create(new IdentityRole(name));
+            }
+
+            //Create Role User if it does not exist
+            name = "User";
+            if (!RoleManager.RoleExists(name))
+            {
+                var roleresult = RoleManager.Create(new IdentityRole(name));
+            }
+
+            var model = new AddToRoleModel();
+            model.Roles.Add("Administrator");
+            model.Roles.Add("User");
+            Console.WriteLine(model.Roles);
+            return View(model);
+        }
+
+        //Add the User to the selected Role
+        [HttpPost]
+        public ActionResult AddUserToRole(AddToRoleModel model)
+        {
+            try
+            {
+                var user = UserManager.FindByEmail(model.Email);
+                UserManager.AddToRole(user.Id, Convert.ToString(model.SelectedRole));
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                return HttpNotFound();
+            }
+
         }
 
         //
@@ -155,8 +201,12 @@ namespace ExploreSkopjeMVC.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Add every registered user to the role User
+                    //Not sure if it works :) -- it does
+                    UserManager.AddToRole(user.Id, "User");
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

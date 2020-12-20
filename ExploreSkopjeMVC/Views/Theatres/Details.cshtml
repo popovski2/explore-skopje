@@ -17,14 +17,17 @@
     /////
 }
 
+<br />
+<br />
 <h2>Details</h2>
+<h3>@Model.name</h3>
 @*RatingComments*@
 <div>
     <span class="starFadeN" id="sRate1"></span><span class="starFadeN" id="sRate2"></span><span class="starFadeN" id="sRate3"></span><span class="starFadeN" id="sRate4"></span><span class="starFadeN" id="sRate5"></span>
 </div>
 @*do tuka*@
+
 <div>
-    <h4>Theatre</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -51,12 +54,45 @@
             @Html.DisplayFor(model => model.latitude)
         </dd>
 
+
+        <h4> @Html.DisplayFor(model => model.likes_counter) likes </h4>
+
+
     </dl>
 </div>
+
+@*Like and Unlike buttons*@
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @if (User.IsInRole("Administrator") || User.IsInRole("User"))
+    {
+        <a href="@Url.Action("Like", "Theatres", new { id = Model.id })">
+            <img src="https://img.icons8.com/material-rounded/24/000000/facebook-like--v1.png" />
+        </a>
+
+        <a href="@Url.Action("Unlike", "Theatres", new { id = Model.id })">
+            <img src="https://img.icons8.com/material-rounded/24/000000/thumbs-down.png" />
+        </a>
+    }
 </p>
+
+@*Share button*@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <button value="Copy Url" onclick="Copy();" style="background-color:transparent; border-color:transparent;">
+            <img src="https://img.icons8.com/android/24/000000/link.png" height="20" />
+        </button>
+        <br />
+        <textarea id="urlCopied" rows="1" cols="30" style="display: none;"></textarea>
+        <br /> <br />
+    </div>
+</body>
+</html>
+
+
 @*RatingComments*@
 @foreach (var c in comments)
 {
@@ -93,5 +129,22 @@
     $(function(){
         SCRate();
     });
+
+    function Copy() {
+        //var Url = document.createElement("textarea");
+        $('#urlCopied').show();
+        urlCopied.innerHTML = window.location.href;
+        //Copied = Url.createTextRange();
+        //Copied.execCommand("Copy");
+    }
 </script>
 @*do tuka*@
+
+
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Edit  ", "Edit", new { id = Model.id })}
+
+    @Html.ActionLink("Back to List", "Index")
+</p>

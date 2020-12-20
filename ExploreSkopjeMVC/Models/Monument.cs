@@ -28,6 +28,7 @@ namespace ExploreSkopjeMVC.Models
 
         public double latitude { get; set; }
 
+        public int likes_counter { get; set; }
 
     }
 }

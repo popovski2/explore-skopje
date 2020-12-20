@@ -14,6 +14,10 @@ namespace ExploreSkopjeMVC.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        //Enable user to like (flag) or unlike (flag1) only once
+        public static bool flag = false;
+        public static bool flag1 = false;
+
         // GET: Theatres
         public ActionResult Index()
         {
@@ -85,12 +89,45 @@ namespace ExploreSkopjeMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                theatre.likes_counter = 0;
                 db.Theatres.Add(theatre);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(theatre);
+        }
+
+        public ActionResult Like(int id)
+        {
+            Theatre update = db.Theatres.ToList().Find(u => u.id == id);
+
+            if (!flag)
+            {
+                //ViewBag.flag = true;
+                update.likes_counter += 1;
+                flag = true;
+                flag1 = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
+        }
+
+        public ActionResult Unlike(int id)
+        {
+            Theatre update = db.Theatres.ToList().Find(u => u.id == id);
+
+            if (!flag1)
+            {
+                //ViewBag.flag = false;
+                update.likes_counter -= 1;
+                flag1 = true;
+                flag = false;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Details", new { update.id });
         }
 
         // GET: Theatres/Edit/5
