@@ -205,6 +205,22 @@
     <Compile Include="Migrations\202012061530530_second.designer.cs">
       <DependentUpon>202012061530530_second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012201244337_url-facebookLink-coffeebar.cs" />
+    <Compile Include="Migrations\202012201244337_url-facebookLink-coffeebar.designer.cs">
+      <DependentUpon>202012201244337_url-facebookLink-coffeebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201353175_url-facebookLink-monuments.cs" />
+    <Compile Include="Migrations\202012201353175_url-facebookLink-monuments.designer.cs">
+      <DependentUpon>202012201353175_url-facebookLink-monuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201405219_url-facebookLink-theatre.cs" />
+    <Compile Include="Migrations\202012201405219_url-facebookLink-theatre.designer.cs">
+      <DependentUpon>202012201405219_url-facebookLink-theatre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201411366_url-facebookLink-restaurant.cs" />
+    <Compile Include="Migrations\202012201411366_url-facebookLink-restaurant.designer.cs">
+      <DependentUpon>202012201411366_url-facebookLink-restaurant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -349,6 +365,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012061530530_second.resx">
       <DependentUpon>202012061530530_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201244337_url-facebookLink-coffeebar.resx">
+      <DependentUpon>202012201244337_url-facebookLink-coffeebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201353175_url-facebookLink-monuments.resx">
+      <DependentUpon>202012201353175_url-facebookLink-monuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201405219_url-facebookLink-theatre.resx">
+      <DependentUpon>202012201405219_url-facebookLink-theatre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201411366_url-facebookLink-restaurant.resx">
+      <DependentUpon>202012201411366_url-facebookLink-restaurant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

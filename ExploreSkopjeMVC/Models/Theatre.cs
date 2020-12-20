@@ -23,5 +23,12 @@ namespace ExploreSkopjeMVC.Models
         public double longitude { get; set; }
 
         public double latitude { get; set; }
+
+        public string url_photo { get; set; }
+
+        public string facebook_link { get; set; }
+
+
+
     }
 }
