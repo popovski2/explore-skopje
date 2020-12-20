@@ -18,6 +18,8 @@ namespace ExploreSkopjeMVC.Models
 
 
 
+
+
         [Key]
         public long id { get; set; }
 
