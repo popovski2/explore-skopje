@@ -270,6 +270,14 @@
     <Compile Include="Migrations\202012181401216_RatingT.designer.cs">
       <DependentUpon>202012181401216_RatingT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012201423258_trendingInitial.cs" />
+    <Compile Include="Migrations\202012201423258_trendingInitial.designer.cs">
+      <DependentUpon>202012201423258_trendingInitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201428355_trendings.cs" />
+    <Compile Include="Migrations\202012201428355_trendings.designer.cs">
+      <DependentUpon>202012201428355_trendings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -467,6 +475,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012181401216_RatingT.resx">
       <DependentUpon>202012181401216_RatingT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201423258_trendingInitial.resx">
+      <DependentUpon>202012201423258_trendingInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201428355_trendings.resx">
+      <DependentUpon>202012201428355_trendings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

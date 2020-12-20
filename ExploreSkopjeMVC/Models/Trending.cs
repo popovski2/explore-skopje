@@ -12,7 +12,7 @@ namespace ExploreSkopjeMVC.Models
         //ovde ce gi cuvame TRENDING mestata spored presmetani review-a (oceni)
         //vo kontroler ke barame koj ima max review i ke gi sortirame po opagjacki redosled
 
-            [Key]
+        [Key]
         public long id { get; set; }
 
         public List<Restaurant> restorani { get; set; }
@@ -21,6 +21,14 @@ namespace ExploreSkopjeMVC.Models
         public List<Monument> monumenti { get; set; }
         public List<Theatre> teatri { get; set; }
         public List<CoffeeBar> kafici { get; set; }
+
+
+        //za trending 
+        public List<Restaurant> trendingRestaurants { get; set; }
+
+        public List<Theatre> trendingTheaters { get; set; }
+
+        public List<CoffeeBar> trendingCoffeeBars { get; set; }
 
 
     }

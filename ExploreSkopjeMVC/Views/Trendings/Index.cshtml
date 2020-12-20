@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ExploreSkopjeMVC.Models.Trending>
+﻿@model ExploreSkopjeMVC.Models.Trending 
 
 @{
     ViewBag.Title = "Trending";
@@ -144,8 +144,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Restoran 1
+                                                    <span class="prefix is-block">@Model.trendingRestaurants.ElementAt(0).name</span>
+                                                    
 
                                                 </h3>
 
@@ -165,9 +165,9 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
+                                                    <span class="prefix is-block">@Model.trendingRestaurants.ElementAt(1).name</span>
 
-                                                    Restoran 2
+                                                   
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -186,8 +186,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Restoran 3
+                                                    <span class="prefix is-block">@Model.trendingRestaurants.ElementAt(2).name</span>
+                                                   
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -225,8 +225,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Kafe bar 1
+                                                    <span class="prefix is-block">@Model.trendingCoffeeBars.ElementAt(0).name</span>
+                                                   
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -245,8 +245,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Kafe bar 2
+                                                    <span class="prefix is-block">@Model.trendingCoffeeBars.ElementAt(1).name</span>
+                                                   
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -265,8 +265,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Kafe bar 3
+                                                    <span class="prefix is-block">@Model.trendingCoffeeBars.ElementAt(2).name</span>
+                                                   
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -303,8 +303,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Teatar 1
+                                                    <span class="prefix is-block">@Model.trendingTheaters.ElementAt(0).name</span>
+                                                   
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -323,8 +323,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Teatar 2
+                                                    <span class="prefix is-block">@Model.trendingTheaters.ElementAt(1).name</span>
+                                                    
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
@@ -343,8 +343,8 @@
 
                                             <div class="list-teaser__content">
                                                 <h3 class="list-teaser__title">
-                                                    <span class="prefix is-block">najdobar</span>
-                                                    Teatar 3
+                                                    <span class="prefix is-block">@Model.trendingTheaters.ElementAt(2).name</span>
+                                                  
                                                 </h3>
 
                                                 <div class="list-teaser__private is-desktop" data-private-icon></div>
