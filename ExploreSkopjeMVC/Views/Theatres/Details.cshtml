@@ -53,6 +53,32 @@
 
 </p>
 
+<html>
+<head>
+    <title></title>
+</head>
+<script type="text/javascript">
+        function Copy()
+            {
+                    //var Url = document.createElement("textarea");
+                    $('#urlCopied').show();
+                    urlCopied.innerHTML = window.location.href;
+                    //Copied = Url.createTextRange();
+                    //Copied.execCommand("Copy");
+            }
+</script>
+<body>
+    <div>
+        <button value="Copy Url" onclick="Copy();" style="background-color:transparent; border-color:transparent;">
+            <img src="https://img.icons8.com/android/24/000000/link.png" height="20" />
+        </button>
+        <br />
+        <textarea id="urlCopied" rows="1" cols="30" style="display: none;"></textarea>
+        <br /> <br />
+    </div>
+</body>
+</html>
+
 <p>
     @if (User.IsInRole("Administrator"))
     {
