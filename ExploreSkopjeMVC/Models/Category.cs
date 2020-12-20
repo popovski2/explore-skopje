@@ -17,6 +17,5 @@ namespace ExploreSkopjeMVC.Models
         //gi naprajv sekoj poseben model
         public List<String> kategorii { get; set; }
       
-
     }
 }
