@@ -1,0 +1,23 @@
+# Цевка и инструкции
+
+### За цел на апликацијата го користиме **osmfilter** за филтрирање на податоци од OpenStreetMap и **osmconvert** за конвертирање на добиениот фајл во .csv фајл. 
+Овие команди се пишуваат во командна линија (CMD) на Windows OS една по друга.
+Резултатот од овие команди се 4 .csv фајлови за:
+1. кафулиња
+2. ресторани
+3. театри
+4. монументи
+
+
+***Забелешка**
+Бидејќи Excel автоматски не чита карактери со кирилична поддршка, истите се прикажуваат на следниот начин:
+Отворање нов Excel документ -> Data -> From Text -> Селектирање на еден од добиените фајлови -> Next -> Селектирање на check-box-ите (Delimiters): Comma, Semicolon, Tab -> Finish
+
+
+osmfilter karpos4-madzirmaalo.osm --ignore-dependencies --drop-relations --drop-ways --keep="amenity=cafe and name=*" | osmconvert64.exe - --all-to-nodes --csv="@id @lon @lat name" --csv-headline --csv-separator="," -o="kafulinja.csv"
+
+osmfilter karpos4-madzirmaalo.osm --ignore-dependencies --drop-relations --drop-ways --keep="amenity=restaurant and name=*" | osmconvert64.exe - --all-to-nodes --csv="@id @lon @lat name" --csv-headline --csv-separator="," -o="restorani.csv"
+
+osmfilter karpos4-madzirmaalo.osm --ignore-dependencies --drop-relations --drop-ways --keep="amenity=theatre and name=*" | osmconvert64.exe - --all-to-nodes --csv="@id @lon @lat name" --csv-headline --csv-separator="," -o="teatri.csv"
+
+osmfilter karpos4-madzirmaalo.osm --ignore-dependencies --drop-relations --drop-ways --keep="historic=monument and name=*" | osmconvert64.exe - --all-to-nodes --csv="@id @lon @lat name" --csv-headline --csv-separator="," -o="monumenti.csv"

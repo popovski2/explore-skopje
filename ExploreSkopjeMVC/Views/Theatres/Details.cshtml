@@ -1,0 +1,225 @@
+﻿@model ExploreSkopjeMVC.Models.Theatre
+
+@{
+    ViewBag.Title = "Details";
+
+    //RatingComments
+    var comments = (IEnumerable<ExploreSkopjeMVC.Models.RatingComments>)ViewBag.Comments;
+    var ratingSum = ViewBag.RatingSum;
+    var ratingCount = ViewBag.RatingCount;
+
+    decimal rating = 0;
+    if (ratingCount > 0)
+    {
+        rating = (ratingSum / ratingCount);
+    }
+    var totalRating = decimal.Parse(rating.ToString());
+    /////
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+    <meta charset="utf-8" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="" type="image/png" />
+
+    <title>Coffee Bars | Explore Skopje</title>
+
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" />
+    <link rel="stylesheet" media="all" href="https://use.typekit.net/dhp3xnl.css" />
+    <link rel="stylesheet" media="all" href="~/Content/global.css" />
+</head>
+<body>
+
+    <br />
+    <br />
+    <h3>@Model.name</h3>
+    <hr />
+
+    @*RatingComments*@
+    <div>
+        <span class="starFadeN" id="sRate1"></span><span class="starFadeN" id="sRate2"></span><span class="starFadeN" id="sRate3"></span><span class="starFadeN" id="sRate4"></span><span class="starFadeN" id="sRate5"></span>
+    </div>
+
+    <hr />
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+            </dt>
+
+            <dd>
+            </dd>
+
+            <dt>
+            </dt>
+
+            <dd>
+            </dd>
+
+            <dt>
+                @if (Model.facebook_link != null)
+                {
+    @Html.DisplayNameFor(model => model.facebook_link)}
+            </dt>
+
+            <dd>
+                @if (Model.facebook_link != null)
+                {
+    @Html.DisplayFor(model => model.facebook_link)}
+            </dd>
+
+
+            <h4> @Html.DisplayFor(model => model.likes_counter) likes </h4>
+
+
+        </dl>
+    </div>
+
+    @*Like and Unlike buttons*@
+    <p>
+        @if (User.IsInRole("Administrator") || User.IsInRole("User"))
+        {
+<a href="@Url.Action("Like", "Theatres", new { id = Model.id })">
+    <img src="https://img.icons8.com/material-rounded/24/000000/facebook-like--v1.png" />
+</a>
+
+                <a href="@Url.Action("Unlike", "Theatres", new { id = Model.id })">
+                    <img src="https://img.icons8.com/material-rounded/24/000000/thumbs-down.png" />
+                </a>}
+    </p>
+
+    @*Share button*@
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <button value="Copy Url" onclick="Copy();" style="background-color:transparent; border-color:transparent;">
+                <img src="https://img.icons8.com/android/24/000000/link.png" height="20" />
+            </button>
+            <br />
+            <textarea id="urlCopied" rows="1" cols="30" style="display: none;"></textarea>
+            <br /> <br />
+        </div>
+    </body>
+</html>
+
+@*RatingComments*@
+@foreach (var c in comments)
+{
+<hr />
+                <div class="row">
+                    <div class="col-md-3">
+                        <i>@c.ThisDateTime</i>
+                        <br />
+                        @for (var i = 1; i <= c.Rating; i++)
+                        {
+        <span class="starGlowN"></span>}
+                        @for (var i = (c.Rating + 1); i <= 5; i++)
+                        {
+        <span class="starFadeN"></span>}
+                    </div>
+                    <div class="col-md-9">
+                        @Html.Raw(c.Comments.Replace("\n", "<br />"))
+
+
+                    </div>
+                </div>}
+<br />
+@if (User.IsInRole("Administrator") || User.IsInRole("User"))
+{
+@Html.Partial("_CommentBox")}
+<br />
+<div class="hotspots__map sticky" data-hotspots-map>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.9998961390615!2d21.414478015444917!3d42.00027777921266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1354144f40b3c925%3A0x1346932b570f3ab3!2sBroz%20Kafe!5e0!3m2!1sen!2smk!4v1608502119740!5m2!1sen!2smk" width="100" height="100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+
+<hr />
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf__3W2NyXtZZimWNz29uNSfztMjZZOTc&callback=initMap"
+        type="text/javascript"></script>
+<script>
+    function SCRate() {
+        for (var i = 1; i <= @totalRating; i++) {
+            $("#sRate" + i).attr('class', 'starGlowN');
+        }
+    }
+    $(function(){
+        SCRate();
+    });
+
+    function Copy() {
+        //var Url = document.createElement("textarea");
+        $('#urlCopied').show();
+        urlCopied.innerHTML = window.location.href;
+        //Copied = Url.createTextRange();
+        //Copied.execCommand("Copy");
+    }
+
+     var map;
+    function initMap(zoomeLevel, latDb, longDb) {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: latDb != null ? latDb : @Model.latitude, lng: longDb != null ? longDb : @Model.longitude },
+            zoom: zoomeLevel != null ? zoomeLevel : 6
+        });
+    }
+
+    function GoLocation(locationId) {
+        $.get("/CoffeeBars/GetAllLocationById?id=" + locationId, function (data, status) {
+            initMap(data.Zoom, data.Lat, data.Long);
+            marker = new google.maps.Marker({
+                position: { lat: @Model.latitude, lng: @Model.longitude },
+                map: map,
+                icon: iconName
+            });
+
+
+            google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+                return function () {
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+            google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
+                return function () {
+                    infowindow.close();
+                }
+            })(marker, i));
+        })
+    }
+}
+</script>
+@*do tuka*@
+
+
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+@Html.ActionLink("Edit  ", "Edit", new { id = Model.id })}
+
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+</body>
+</html>
+

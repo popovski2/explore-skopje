@@ -1,0 +1,261 @@
+﻿@model IEnumerable<ExploreSkopjeMVC.Models.Categories>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/themes/custom/drupack/public/images/favicon.png" type="image/png" />
+
+    <title>Explore Skopje</title>
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="use.typekit.net">
+    <link rel="dns-prefetch" href="p.typekit.net">
+
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="" />
+    <meta name="description" content="Categories" />
+    <meta property="og:description" content="Categories" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" />
+    <link rel="stylesheet" media="all" href="https://use.typekit.net/dhp3xnl.css" />
+    <link rel="stylesheet" media="all" href="~/Content/global.css" />
+
+
+
+    <style>
+        :root {
+            --theme-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+        <div class="site-container">
+
+
+            <main class="content " role="main">
+                <div data-drupal-messages-fallback class="hidden"></div>
+
+
+                <div class="page-title">
+                    <h1 class="page-title__h1">
+                        <span class="page-title__inner">
+                            <span class="page-title__prefix prefix is-block">All</span>
+
+                            <span class="page-title__main">Categories</span>
+
+
+                        </span>
+                    </h1>
+
+                </div>
+
+                <div class="container is-white">
+                    <div class="container is-horizontal is-vertical">
+                        <div data-destination-overview>
+                            <ul class="grid">
+
+                                <!--KAFICI-->
+                                <li class="col-md-6">
+
+
+                                    <a class="destination-teaser" href="~/CoffeeBars/Index">
+
+                                        <div class="destination-teaser__image"
+                                             style="background-image: url(/Content/Sliki/coffeeBarCategory.jpg); opacity:0.9;">
+
+                                        </div>
+
+                                        <div class="destination-teaser__content">
+
+                                            <h2 class="headline-4 destination-teaser__title">
+                                                Coffee bars
+
+                                            </h2>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                                <!--RESTORANI-->
+                                <li class="col-md-6">
+                                    <a class="destination-teaser" href="~/Restaurants/Index">
+
+                                        <div class="destination-teaser__image"
+                                             style="background-image: url(/Content/Sliki/restaurantsCategory.jpg); opacity:0.9;">
+
+                                        </div>
+
+                                        <div class="destination-teaser__content">
+                                            <h2 class="headline-4 destination-teaser__title">
+                                                Restaurants
+                                            </h2>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <!--TEATRI-->
+                                <li class="col-md-6">
+                                    <a class="destination-teaser" href="~/Theatres/Index">
+
+                                        <div class="destination-teaser__image"
+                                             style="background-image: url(/Content/Sliki/theatresCategory.jpg); opacity:0.9;">
+
+                                        </div>
+
+                                        <div class="destination-teaser__content">
+                                            <h2 class="headline-4 destination-teaser__title">
+                                                Theatres
+
+                                            </h2>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <!--MONUMENTI-->
+                                <li class="col-md-6">
+                                    <a class="destination-teaser" href="~/Monuments/Index">
+
+                                        <div class="destination-teaser__image"
+                                             style="background-image: url(/Content/Sliki/monumentsCategory.jpg); opacity:0.9;">
+
+                                        </div>
+
+                                        <div class="destination-teaser__content">
+                                            <h2 class="headline-4 destination-teaser__title">
+                                                Monuments
+
+
+                                            </h2>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </main>
+
+
+            <footer>
+                <div class="footer" style="background-color:crimson;">
+                    <nav class="container is-horizontal" aria-label="Footer navigation">
+                        <ul class="footer__list grid">
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">About</p>
+                                <ul class="footer__sub-list">
+                                    <!-- About us--->
+                                    <li class="footer__sub-item"><a class="footer__link" href="">About us</a></li>
+
+                                </ul>
+                            </li>
+
+                            <!-- Follow us--->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Follow us</p>
+                                <ul class="footer__sub-list">
+                                    <li class="footer__sub-item"><a class="footer__link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                                    <li class="footer__sub-item"><a class="footer__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                                </ul>
+                            </li>
+
+                            <!--Cities (samo skopje sea za sea)--->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Cities</p>
+                                <ul class="footer__sub-list">
+                                    <li class="footer__sub-item"><a class="footer__link" href="/Home/Index">Skopje</a></li>
+
+                                </ul>
+                            </li>
+
+
+                            <!--Menito ovde-->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Menu</p>
+                                <ul class="footer__sub-list">
+                                    <li class="footer__sub-item"><a class="footer__link" href="~/Home/Index">Home</a></li>
+                                    <li class="footer__sub-item"><a class="footer__link" href="~/Categories/Index">Categories</a></li>
+                                    <li class="footer__sub-item"><a class="footer__link" href="~/Trendings/Index">Trending</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Ovde mapa da se stajt najubo Contact--->
+                            <li class="footer__item col-2">
+                                <p class="headline-4 footer__link">Contact Us</p>
+                                <ul class="footer__sub-list">
+                                    <li style="width:500px;" class="footer__sub-item">Phone number: +389 70 000 000</li>
+                                    <li style="width:500px;" class="footer__sub-item">Adress: Partizanski Odredi 77</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </footer>
+        </div>
+
+
+
+
+    </div>
+
+
+
+</body>
+</html>
+
+
+
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+</table>
+    -->
