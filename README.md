@@ -6,4 +6,9 @@
 https://exploreskopjemvc20201220233303.azurewebsites.net/
 
 
+[Домашна 4]
+Контејнизираната апликација ја публикувавме на Azure Web Apps. Линк:
+
+https://exploreskopje.azurewebsites.net/
+
 
