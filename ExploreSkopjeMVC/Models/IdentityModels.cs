@@ -25,9 +25,23 @@ namespace ExploreSkopjeMVC.Models
         {
         }
 
+        //SINGLETON PATTERN IMPLEMENTED
+        private static ApplicationDbContext uniqueInstance = null;
+        private static readonly object _lock = new object();
+
         public static ApplicationDbContext Create()
         {
-            return new ApplicationDbContext();
+            if (uniqueInstance == null)
+            {
+                lock (_lock)
+                {
+                    if (uniqueInstance == null)
+                    {
+                        uniqueInstance = new ApplicationDbContext();
+                    }
+                }
+            }
+            return uniqueInstance;
         }
 
         public System.Data.Entity.DbSet<ExploreSkopjeMVC.Models.CoffeeBar> CoffeeBars { get; set; }
@@ -42,6 +56,7 @@ namespace ExploreSkopjeMVC.Models
 
         public System.Data.Entity.DbSet<ExploreSkopjeMVC.Models.RatingComments> RatingComments { get; set; }
 
-        public System.Data.Entity.DbSet<ExploreSkopjeMVC.Models.Categories> Categories { get; set; }
+        public System.Data.Entity.DbSet<ExploreSkopjeMVC.Models.Category> Categories { get; set; }
+
     }
 }

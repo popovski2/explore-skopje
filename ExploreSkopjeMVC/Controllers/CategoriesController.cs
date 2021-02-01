@@ -27,7 +27,7 @@ namespace ExploreSkopjeMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categories category = db.Categories.Find(id);
+            Category category = db.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -42,11 +42,11 @@ namespace ExploreSkopjeMVC.Controllers
         }
 
         // POST: Categories/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id")] Categories category)
+        public ActionResult Create([Bind(Include = "id")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace ExploreSkopjeMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categories category = db.Categories.Find(id);
+            Category category = db.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -74,11 +74,11 @@ namespace ExploreSkopjeMVC.Controllers
         }
 
         // POST: Categories/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id")] Categories category)
+        public ActionResult Edit([Bind(Include = "id")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace ExploreSkopjeMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categories category = db.Categories.Find(id);
+            Category category = db.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace ExploreSkopjeMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Categories category = db.Categories.Find(id);
+            Category category = db.Categories.Find(id);
             db.Categories.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");

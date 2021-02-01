@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  exploreskopjemvc:
+    image: ${DOCKER_REGISTRY-}exploreskopjemvc
+    build:
+      context: .\ExploreSkopjeMVC
+      dockerfile: Dockerfile

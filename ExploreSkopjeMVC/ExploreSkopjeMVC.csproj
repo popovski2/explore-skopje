@@ -29,6 +29,7 @@
     </NuGetPackageImportStamp>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -341,10 +342,18 @@
     <Compile Include="Migrations\202101301240567_photos.designer.cs">
       <DependentUpon>202101301240567_photos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101312102304_category-added.cs" />
+    <Compile Include="Migrations\202101312102304_category-added.designer.cs">
+      <DependentUpon>202101312102304_category-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101312107454_categories-removed.cs" />
+    <Compile Include="Migrations\202101312107454_categories-removed.designer.cs">
+      <DependentUpon>202101312107454_categories-removed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddToRoleModel.cs" />
-    <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CoffeeBar.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LikesViewModel.cs" />
@@ -556,6 +565,8 @@
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
     <None Include="Properties\PublishProfiles\ExploreSkopjeMVC20201220233303 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ExploreSkopjeMVC20210201031302.pubxml" />
+    <None Include="Properties\PublishProfiles\registry.hub.docker.com_angelamadjar.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -845,6 +856,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101301240567_photos.resx">
       <DependentUpon>202101301240567_photos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101312102304_category-added.resx">
+      <DependentUpon>202101312102304_category-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101312107454_categories-removed.resx">
+      <DependentUpon>202101312107454_categories-removed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
